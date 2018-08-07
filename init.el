@@ -183,10 +183,10 @@ Start `ielm' if it's not already running."
   (add-hook 'ielm-mode-hook #'eldoc-mode)
   (add-hook 'ielm-mode-hook #'rainbow-delimiters-mode))
 
-(use-package zenburn-theme
+(use-package solarized-theme
   :ensure t
   :config
-  (load-theme 'zenburn t))
+  (load-theme 'solarized-light t))
 
 ;; highlight the current line
 (global-hl-line-mode +1)
@@ -538,6 +538,9 @@ Start `ielm' if it's not already running."
   :ensure t
   :config
   (volatile-highlights-mode +1))
+
+(set-face-attribute 'default nil :family "PragmataPro")
+(set-face-attribute 'default nil :height 160)
 
 (when (eq system-type 'windows-nt)
   (setq w32-pass-lwindow-to-system nil)
