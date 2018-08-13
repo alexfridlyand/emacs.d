@@ -1,11 +1,8 @@
-;;; init.el --- Bozhidar's Emacs configuration
+;;; init.el --- Alex's Emacs configuration
 ;;
-;; Copyright (c) 2016-2018 Bozhidar Batsov
+;; Author: Alex Fridlyand <alex@fridlyand.com>
+;; URL: https://github.com/alexfridlyand/emacs.d
 ;;
-;; Author: Bozhidar Batsov <bozhidar@batsov.com>
-;; URL: https://github.com/bbatsov/emacs.d
-;; Keywords: convenience
-
 ;; This file is not part of GNU Emacs.
 
 ;;; Commentary:
@@ -42,8 +39,8 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-(setq user-full-name "Bozhidar Batsov"
-      user-mail-address "bozhidar@batsov.com")
+(setq user-full-name "Alex Fridlyand"
+      user-mail-address "alex@fridlyand.com")
 
 ;; Always load newest byte code
 (setq load-prefer-newer t)
@@ -55,11 +52,11 @@
 ;; warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
 
-(defconst bozhidar-savefile-dir (expand-file-name "savefile" user-emacs-directory))
+(defconst alex-savefile-dir (expand-file-name "savefile" user-emacs-directory))
 
 ;; create the savefile dir if it doesn't exist
-(unless (file-exists-p bozhidar-savefile-dir)
-  (make-directory bozhidar-savefile-dir))
+(unless (file-exists-p alex-savefile-dir)
+  (make-directory alex-savefile-dir))
 
 ;; the toolbar is just a waste of valuable screen estate
 ;; in a tty tool-bar-mode does not properly auto-load, and is
@@ -164,7 +161,7 @@
 
 (use-package lisp-mode
   :config
-  (defun bozhidar-visit-ielm ()
+  (defun alex-visit-ielm ()
     "Switch to default `ielm' buffer.
 Start `ielm' if it's not already running."
     (interactive)
@@ -172,7 +169,7 @@ Start `ielm' if it's not already running."
 
   (add-hook 'emacs-lisp-mode-hook #'eldoc-mode)
   (add-hook 'emacs-lisp-mode-hook #'rainbow-delimiters-mode)
-  (define-key emacs-lisp-mode-map (kbd "C-c C-z") #'bozhidar-visit-ielm)
+  (define-key emacs-lisp-mode-map (kbd "C-c C-z") #'alex-visit-ielm)
   (define-key emacs-lisp-mode-map (kbd "C-c C-c") #'eval-defun)
   (define-key emacs-lisp-mode-map (kbd "C-c C-b") #'eval-buffer)
   (add-hook 'lisp-interaction-mode-hook #'eldoc-mode)
