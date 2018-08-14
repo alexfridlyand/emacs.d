@@ -259,7 +259,7 @@ Start `ielm' if it's not already running."
 (require 'saveplace)
 (use-package saveplace
   :config
-  (setq save-place-file (expand-file-name "saveplace" bozhidar-savefile-dir))
+  (setq save-place-file (expand-file-name "saveplace" alex-savefile-dir))
   ;; activate it for all buffers
   (setq-default save-place t))
 
@@ -271,12 +271,12 @@ Start `ielm' if it's not already running."
         ;; save every minute
         savehist-autosave-interval 60
         ;; keep the home clean
-        savehist-file (expand-file-name "savehist" bozhidar-savefile-dir))
+        savehist-file (expand-file-name "savehist" alex-savefile-dir))
   (savehist-mode +1))
 
 (use-package recentf
   :config
-  (setq recentf-save-file (expand-file-name "recentf" bozhidar-savefile-dir)
+  (setq recentf-save-file (expand-file-name "recentf" alex-savefile-dir)
         recentf-max-saved-items 500
         recentf-max-menu-items 15
         ;; disable recentf-cleanup on Emacs start, because it can cause
