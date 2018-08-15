@@ -537,7 +537,7 @@ Start `ielm' if it's not already running."
   (volatile-highlights-mode +1))
 
 (set-face-attribute 'default nil :family "PragmataPro")
-(set-face-attribute 'default nil :height 160)
+(set-face-attribute 'default nil :height 140)
 
 (when (eq system-type 'windows-nt)
   (setq w32-pass-lwindow-to-system nil)
