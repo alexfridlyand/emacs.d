@@ -429,7 +429,7 @@ Start `ielm' if it's not already running."
 (use-package flyspell
   :config
   (when (eq system-type 'windows-nt)
-    (add-to-list 'exec-path "/usr/bin/local/aspell"))
+    (add-to-list 'exec-path "/usr/local/bin/aspell"))
   (setq ispell-program-name "aspell" ; use aspell instead of ispell
         ispell-extra-args '("--sug-mode=ultra"))
   (add-hook 'text-mode-hook #'flyspell-mode)
